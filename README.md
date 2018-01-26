@@ -1,13 +1,16 @@
 # WechatBundle
 This Symfony bundle provides integration support with the latest EasyWeChat library.
+
 这个 Symfony bunble 模块用于把 EasyWeChat 库集成进你的项目。
 
 > #### Why use this bundle / 使用这个 bundle 的好处
 > You don't need to construct the EasyWeChat API objects explicitly in your code, just inject the service object where you need it and call it.
+> 
 > 你不需要写代码 “new” 那些 EasyWeChat 提供的类，而是直接在需要的地方注入，然后直接使用就行了。
 
 ### Usage / 用法
 Once the bundle been successfully loaded into your Symfony application, the following service instances would be ready to use:
+
 在 Bundle 成功加载到你的 Symfony 应用程序之后，以下的5个服务对象就可以使用了：
 
   - orinoco_wechat.application.official_account
@@ -17,6 +20,7 @@ Once the bundle been successfully loaded into your Symfony application, the foll
   - orinoco_wechat.application.work
 
 For example:
+
 例如：
 ```php
 // in controller class
@@ -73,5 +77,6 @@ orinoco_wechat:
 ```
 ### Reference / 参考
 Please refer to the EasyWeChat documentation for more details.
+
 具体的用法请参考 EasyWeChat 的文档
 [https://www.easywechat.com/docs/master](https://www.easywechat.com/docs/master)
