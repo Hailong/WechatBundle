@@ -1,0 +1,22 @@
+{
+    "name": "orinoco/wechat-bundle",
+    "description": "This Symfony bundle provides integration support with the latest EasyWeChat library. (https://www.easywechat.com/)",
+    "type": "symfony-bundle",
+    "keywords": ["symfony", "wechat", "sdk", "weixin"],
+    "license": "MIT",
+    "homepage": "https://github.com/Hailong/WechatBundle",
+    "authors": [
+        {
+            "name": "Hailong Zhao",
+            "email": "hailongzh@hotmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "Orinoco\\WechatBundle\\": ""
+        }
+    },
+    "require": {
+        "overtrue/wechat": "^4.0"
+    }
+}
