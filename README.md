@@ -79,4 +79,5 @@ orinoco_wechat:
 Please refer to the EasyWeChat documentation for more details.
 
 具体的用法请参考 EasyWeChat 的文档
+
 [https://www.easywechat.com/docs/master](https://www.easywechat.com/docs/master)
