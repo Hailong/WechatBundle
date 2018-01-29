@@ -43,37 +43,50 @@ orinoco_wechat:
     sandbox: true
 
     log:
-        enabled: true
         level: debug
         file: /Users/hailong/dev/zshwag/app/../var/logs/wechat.log
 
     applications:
         official_account:
-            app_id: "%wechat_app_id%"
-            secret: "%wechat_secret%"
+            app_id: "%wechat_official_account_app_id%"
+            secret: "%wechat_official_account_secret%"
             response_type: array
 
         payment:
-            app_id: "%wechat_app_id%"
-            mch_id: "%wechat_mch_id%"
-            key: "%wechat_key%"
+            app_id: "%wechat_payment_app_id%"
+            mch_id: "%wechat_payment_mch_id%"
+            key: "%wechat_payment_key%"
             cert_path: "%wechat_cert_path%"
             key_path: "%wechat_key_path%"
-            notify_url: "%wechat_notify_url%"
+            notify_url: "%wechat_payment_notify_url%"
 
         mini_program:
 
         open_platform:
-            app_id: "%wechat_app_id%"
-            secret: "%wechat_secret%"
-            token: "%wechat_token%"
-            aes_key: "%wechat_aes_key%"
+            app_id: "%wechat_open_platform_app_id%"
+            secret: "%wechat_open_platform_secret%"
+            token: "%wechat_open_platform_token%"
+            aes_key: "%wechat_open_platform_aes_key%"
 
         work:
-            corp_id: "%wechat_corp_id%"
-            agent_id: "%wechat_agent_id%"
-            secret: "%wechat_secret%"
+            corp_id: "%wechat_work_corp_id%"
+            agent_id: "%wechat_work_agent_id%"
+            secret: "%wechat_work_secret%"
             response_type: array
+```
+### Production / 成产环境
+You need to set "sandbox" to `false` and optionally disable the logging when deploy your application to the production environment.
+
+当部署到生产环境的时候，需要把 "sandbox" 设置为 `false`，并且可以关闭日志文件。
+```yml
+# app/config/config.yml
+orinoco_wechat:
+    sandbox: false
+
+    log:
+        enabled: false
+
+    # ...
 ```
 ### Reference / 参考
 Please refer to the EasyWeChat documentation for more details.

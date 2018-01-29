@@ -33,12 +33,21 @@ class OrinocoWechatExtension extends Extension
             return;
         }
 
+        if ($config['log']['enabled']) {
+            unset($config['log']['enabled']);
+        } else {
+            unset($config['log']);
+        }
+
         $applications = $config['applications'];
         unset($config['applications']);
 
         // setup services for all configured applications
         foreach ($applications as $name => $options) {
-            $this->createApplicationService($container, $name, array_merge($config, $options));
+            if ($options['enabled']) {
+                unset($options['enabled']);
+                $this->createApplicationService($container, $name, array_merge($config, $options));
+            }
         }
     }
 

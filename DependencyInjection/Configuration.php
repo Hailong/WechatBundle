@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->arrayNode('log')
                     ->addDefaultsIfNotSet()
-                    ->canBeEnabled()
+                    ->canBeDisabled()
                     ->children()
                         ->scalarNode('level')
                             ->defaultValue('debug')
@@ -118,9 +118,20 @@ class Configuration implements ConfigurationInterface
         $node = $builder->root('mini_program');
 
         $node
-            ->addDefaultsIfNotSet()
             ->canBeEnabled()
             ->children()
+                ->scalarNode('app_id')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('secret')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('response_type')
+                    ->info('指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名')
+                    ->defaultValue('array')
+                ->end()
             ->end()
         ;
 
