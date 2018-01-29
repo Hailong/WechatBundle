@@ -61,6 +61,8 @@ orinoco_wechat:
             notify_url: "%wechat_payment_notify_url%"
 
         mini_program:
+            app_id: "%wechat_mini_program_app_id%"
+            secret: "%wechat_mini_program_secret%"
 
         open_platform:
             app_id: "%wechat_open_platform_app_id%"
